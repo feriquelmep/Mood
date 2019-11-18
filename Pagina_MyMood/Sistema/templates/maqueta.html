@@ -1,0 +1,53 @@
+{% load staticfiles %}
+<html>
+    <head>
+        <title>{{titulo}}</title>
+        <link rel="stylesheet" href="{% static 'css/maqueta.css' %}"> <!--Ruta para el Archivo Principal de Estilo-->
+        <script src="{% static 'js/prefix.js' %}" type="test/javascript"></script><!--Script para asegurar que en todos los navegadores y dispositivos el sitio se vea igual-->
+    </head>
+    <body>
+        <header> <!--Cabecera de la Página-->
+			<div class="contenedorlogo">
+				<img src="{% static 'img/logotipo.png' %}" alt="logo">
+				<a href="/index/">Mis Perris</a>
+			</div>
+
+          <!-- El primer if,verifica si hay un usuario ya logeado o no, sin importar su tipo de usuario  -->
+            {% if request.user.is_authenticated %}  <!-- Si hay un usuario logueado, mostrará una de las 2 opciones, dependiendo el tipo de Usuario-->
+                {% if user.is_staff %} <!-- Si el usuario es Staff (Administrador), Muestra el siguiente Header (REVISAR VIEWS) -->
+                    <nav> <!--Menú Superior-->
+                        <a href="/index/">Inicio</a>
+                        <a href="/registroAdmin/">Registrar Usuario</a>
+                        <a href="/listaPersona/">Gestionar Usuario</a>
+                        <a href="/salir/">Cerrar Sesión</a>
+                    </nav>
+                {% else %} <!-- Si es un Usuario normal, muestra esto -->
+                    <nav> <!--Menú Superior-->
+                        <a href="/index/">Inicio</a>
+                        <a href="#">Trabaja con nosotros</a>
+                        <a href="#">Tus Guardados</a>
+                        <a href="/salir/">Cerrar Sesión</a>
+                    </nav>
+                {% endif %}
+            {% else %} <!-- Si no está Logueado le Muestra el Header por Defecto -->
+                <nav> <!--Menú Superior-->
+                    <a href="/index/">Inicio</a>
+                    <a href="formulario.html">Registrate</a>
+                    <a href="/registro/">Trabaja con nosotras</a>
+                    <a href="/login/">Ingresar</a>
+                    <a href="">Quienes Somos</a>
+                </nav>
+            {% endif %}
+
+        </header>
+        <div class="contenedor">
+            {% block principal %}
+            {% endblock %}
+        </div>
+
+      <footer class=pie>
+        <img src="{% static 'img/reloj.jpg' %}" id="reloj">
+        <a href="hora.html">Consulta la hora pinchando aquí</a>
+      </footer>
+    </body>
+</html>

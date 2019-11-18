@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Login MOOD</title>
+	<link rel="stylesheet" type="text/css" href="css/estilologin.css">
+</head>
+<body>
+
+<form action="login.php" method="POST">
+
+	<div class="ContenedorLogin">
+		
+		<label for="userName"><b>Nombre Usuario: </b></label>
+		<input type="text" placeholder="Ingrese Nombre de Usuario" name="userName" required>
+
+		<label for="pass"><b>Contraseña: </b></label>
+		<input type="Password" placeholder="Ingrese su contraseña" name="pass" required>
+
+		<button class="ingresar" type="submit"> Login </button>
+		<label>
+			<input type="checkbox" checked="checked" name="recuerdame"> <b>Recuerdame</b>
+		</label>
+
+	</div>
+
+	<div class="Contenedor">
+		<button type="button" class="btnCancelar"> Cancelar </button>
+		<span class="Password"> <a href="#" class="texto"> ¿Olvidaste tú contraseña? </a></span>
+	</div>
+	
+</form>
+
+</body>
+</html>

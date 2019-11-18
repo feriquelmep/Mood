@@ -1,0 +1,72 @@
+.Contenedor{
+	background-color:#754F5B;
+}
+
+/*Borde del formulario*/
+form{
+	border: 3px solid #5D4954;
+}
+
+/*Inputs*/
+input[type=text], input[type=password]{
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border:1px solid #ccc;
+	box-sizing: border-box;
+}
+
+/*Estilos a los botones*/
+button{
+	background-color: #4CAF50;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+}
+
+.texto{
+	color: white;
+}
+/*Efecto de posicionamiento botones*/
+button:hover{
+	opacity: 0.8;
+}
+
+.ingresar{
+	background-color: #FAE1DF;
+	color: black;
+
+}
+/*Estilo al boton cancelar*/
+.btnCancelar{
+	width: auto;
+	padding: 10px 18px;
+	background-color: #FAE1DF;
+	color: black;
+}
+
+/* Padding a los contenedores */
+.Contenedor, .ContenedorLogin{
+  padding: 16px;
+}
+
+/*Texto olvide la contra bro */
+span.Password {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Responsive */
+@media screen and (max-width: 400px) {
+  span.Password {
+    display: block;
+    float: none;
+  }
+  .botonCancelar {
+    width: 100%;
+  }
+}

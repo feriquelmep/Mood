@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>Formulario MOOD</title>
+	<script
+ 		 src="https://code.jquery.com/jquery-3.4.1.js"
+  			integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  			crossorigin="anonymous"></script><!--Enlaze a las jqery-->
+  	<link rel="stylesheet" type="text/css" href="css/estilos.css"><!--Enlaze a las hojas de estiloss-->
+	<script src="js/validaciones.js"></script><!--Enlaze para validar el formulario-->
+</head>
+<body>
+	
+		<h1>Formulario</h1>
+	<div class="formulario">
+	
+	<form id="form_registro" method="POST" action="procesar.php">
+
+			<label for="nombre_completo"> Nombre completo: </label>	
+				<input type="text" name="nombre_completo">
+					<span class="error" id="mensaje_nombre_completo"></span><br>
+			
+			<label for="correo"> Correo electronico:	</label>
+				<input type="email" name="correo">
+					<span class="error" id="mensaje_correo"></span><br>
+
+			<label for="sexo"> Sexo: </label>
+				<input type="text" name="sexo"><br>
+					<span class="error" id="mensaje_sexo"></span>
+
+			<label for="direccion"> Direccion: </label>
+				<input type="text" name="direccion"><br>
+					<span class="error" id="mensaje_direccion"></span>
+
+			<label for="pais"> Pais: </label>
+				<input type="text" name="pais"><br>
+					<span class="error" id="mensaje_pais"></span>
+
+			<input type="submit" value="Registrar" class="btn-enviar">
+			<p class="form__link">¿Ya tienes una cuenta? <br>
+				<a href="enproceso.html">Ingresa aqui</a></p>
+	</form>
+	</div>		S

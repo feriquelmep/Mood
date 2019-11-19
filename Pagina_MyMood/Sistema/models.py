@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
-
+#Autenticacion
+from django.utils import timezone
+from django.utils.translation import ugettext as _
 # Create your models here.
 #Tabla Persona
 class Persona(models.Model):
@@ -13,4 +15,9 @@ class Persona(models.Model):
     pais=models.CharField(max_length=25)
     tipoPersona=models.CharField(max_length=50, default='Usuario')
 
+    class Meta:
+        permissions = (
+            ('administrador',_('Es administrador')),
+            ('cliente',_('Es cliente')),
+        )    
 

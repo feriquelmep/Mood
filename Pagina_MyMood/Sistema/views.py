@@ -39,7 +39,7 @@ def registroPersona(request):
         regDB.save()
         mensaje='Usuario registrado '+regDB.nombreCompleto
     form=RegistrarPersonaForm()
-    return render(request,"formulario.html",{'form':form,'personas':personas,'formulario':formulario,titulo:"formulario",'mensaje':mensaje})
+    return render(request,"formulario.html",{'form':form,'personas':personas,'titulo':"formulario",'mensaje':mensaje})
 
 #Registro de usuarios,parte del administrador  
 @login_required(login_url='login')
@@ -134,3 +134,10 @@ def listaPersona(request):
     actual=request.user
     personas=Persona.objects.all()
     return render (request,"listaPersona.html",{'personas':personas,'actual':actual,'titulo':"Lista de Personas",})
+
+def lista_permiso(request):
+    user = request.user
+    if user.has_perm('Sistema.Administrador'):
+        return render(request, 'prueba.html')
+    else:
+        return render(request, 'prueba.html')

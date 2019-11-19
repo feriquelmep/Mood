@@ -11,11 +11,11 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.hashers import make_password
 
-#modelo
+#Importación de modelos
 from .models import Persona
 
-#formularios
-from .forms import RegistrarPersonaForm, RegistrarAdminForm, LoginForm, RecuperacionForm #Los demas q faltan
+#Importación de los formularios
+from .forms import RegistrarPersonaForm, RegistrarAdminForm, LoginForm, RecuperacionForm, RestablecerForm #Los demas q faltan
 
 # Create your views here.
 # --- Index ---
@@ -41,12 +41,7 @@ def registroPersona(request):
     form=RegistrarPersonaForm()
     return render(request,"formulario.html",
     {'form':form,'personas':personas,'formulario':formulario,
-    titulo:"Formulario",'mensaje':mensaje})
-
-
-
-
-
+    titulo:"formulario",'mensaje':mensaje})
 
 #Registro de usuarios,parte del administrador  
 @login_required(login_url='login')
@@ -125,6 +120,6 @@ def restablecer(request):
                 User.objects.filter(username=username).update(password=contra)
             else:
                 mensaje="Las contraseñas no coinciden"
-        return render(request,"restablecerContra.html",{'form':form, 'username':username, 'mensaje':mensaje, 'titulo':"Restablecer contraseña",})
+        return render(request,"restablecer.html",{'form':form, 'username':username, 'mensaje':mensaje, 'titulo':"Restablecer contraseña",})
     else:
         return redirect('/login/')

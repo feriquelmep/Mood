@@ -1,0 +1,40 @@
+{% extends 'maqueta.html' %}
+{% load staticfiles %}
+{% block principal %}
+<link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+    <div class="formu">
+      {% if actual.is_staff %}
+      <!-- Si el Usuario es Admin, le muestra una tabla con los datos de todos los usuarios del Sistema -->
+        <h1>Lista de Personas</h1>
+              <table>
+                      <tr>
+                        <td id="top">Rut</td>
+                        <td id="top">Nombre Completo</td>
+                        <td id="top">Fecha de Nacimiento</td>
+                        <td id="top">Correo Electrónico</td>
+                        <td id="top">Sexo</td>
+                        <td id="top">Pais</td>
+                      </tr>
+                  <tbody>
+                  {% if personas %}
+                      {% for p in personas %}
+                      <tr>
+                          <td>{{ p.usuario.username }}</td>
+                          <td>{{ p.nombrePersona }}</td>
+                          <td>{{ p.fechaNacimiento }}</td>
+                          <td>{{ p.usuario.email }}</td>
+                          <td>{{ p.pais }}</td>
+                          <td>{{ p.sexo }}</td>
+                      </tr>
+                      {%endfor%}
+                  {% endif %}
+              </tbody>
+          </table>
+        {% else %}
+        <!-- Si no es Admin, aparece un Mensaje de Permisos Insuficientes  -->
+          <form class="formu">
+            <h1>Sin Permisos Suficientes</h1>
+          </form>
+        {% endif %}
+        </div>
+{% endblock %}

@@ -123,3 +123,16 @@ def restablecer(request):
         return render(request,"restablecer.html",{'form':form, 'username':username, 'mensaje':mensaje, 'titulo':"Restablecer contraseña",})
     else:
         return redirect('/login/')
+
+# Borrar usuario
+def borrarPersona(request, postid):
+    objeto=Persona.objects.filter(rutPersona=postid)
+    objeto.delete()
+    return redirect("/listaPersona/")
+
+# Lista usuario
+@login_required(login_url='login')
+def listaPersona(request):
+    actual=request.user
+    personas=Persona.objects.all()
+    return render (request,"listaPersona.html",{'personas':personas,'actual':actual,'titulo':"Lista de Personas",})

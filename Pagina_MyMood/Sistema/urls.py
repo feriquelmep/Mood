@@ -10,6 +10,7 @@ urlpatterns=[
     url(r'^login/$',views.ingreso, name="login"),
     url(r'^olvido/$',views.olvido, name="olvido"),
     url(r'^restablecer/$',views.restablecer, name="restablecer"),
+    url(r'listaPersona/$',views.listaPersona,name="listaPersona"),
     url(r'^registroAdmin/$',views.registroAdmin, name="registroAdmin"),
     url(r'^salir/$',views.salir,name="logout"),
 ]

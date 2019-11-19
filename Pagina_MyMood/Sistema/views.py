@@ -39,9 +39,7 @@ def registroPersona(request):
         regDB.save()
         mensaje='Usuario registrado '+regDB.nombreCompleto
     form=RegistrarPersonaForm()
-    return render(request,"formulario.html",
-    {'form':form,'personas':personas,'formulario':formulario,
-    titulo:"formulario",'mensaje':mensaje})
+    return render(request,"formulario.html",{'form':form,'personas':personas,'formulario':formulario,titulo:"formulario",'mensaje':mensaje})
 
 #Registro de usuarios,parte del administrador  
 @login_required(login_url='login')

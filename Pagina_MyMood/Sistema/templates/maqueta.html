@@ -2,14 +2,14 @@
 <html>
     <head>
         <title>{{titulo}}</title>
-        <link rel="stylesheet" href="{% static 'css/maqueta.css' %}"> <!--Ruta para el Archivo Principal de Estilo-->
+        <link rel="stylesheet" href="{% static 'css/estilos.css' %}"> <!--Ruta para el Archivo Principal de Estilo-->
         <script src="{% static 'js/prefix.js' %}" type="test/javascript"></script><!--Script para asegurar que en todos los navegadores y dispositivos el sitio se vea igual-->
     </head>
     <body>
         <header> <!--Cabecera de la Página-->
 			<div class="contenedorlogo">
 				<img src="{% static 'img/logotipo.png' %}" alt="logo">
-				<a href="/index/">Mis Perris</a>
+				
 			</div>
 
           <!-- El primer if,verifica si hay un usuario ya logeado o no, sin importar su tipo de usuario  -->

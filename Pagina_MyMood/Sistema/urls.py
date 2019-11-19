@@ -8,7 +8,7 @@ urlpatterns=[
     url(r'^index/$',views.index),
     url(r'^formulario/$',views.registroPersona,name="formulario"),
     url(r'^login/$',views.ingreso, name="login"),
-    url(r'^olvido/$',views.olvidocontraseña, name="olvido"),
+    url(r'^olvido/$',views.olvido, name="olvido"),
     url(r'^restablecer/$',views.restablecer, name="restablecer"),
     url(r'^registroAdmin/$',views.registroAdmin, name="registroAdmin"),
     url(r'^salir/$',views.salir,name="logout"),

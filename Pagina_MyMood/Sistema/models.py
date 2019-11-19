@@ -8,7 +8,7 @@ class Persona(models.Model):
     nombreCompleto=models.CharField(max_length=30)
     correoElectronico=models.EmailField(max_length=30)
     SEXOS=(('F','Femenino'),('M','Masculino'))
-    sexo=models.CharField(max_length=1,choice=SEXOS, default='M')
+    sexo=models.CharField(max_length=1, choices=SEXOS, default='M')
     direccion=models.CharField(max_length=25)
     pais=models.CharField(max_length=25)
     tipoPersona=models.CharField(max_length=50, default='Usuario')

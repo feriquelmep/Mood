@@ -2,15 +2,14 @@
 {% load staticfiles %}
 
 {% block principal %}
-	<link rel="stylesheet" type="text/css" href="{% static 'css/estilologin.css' %}">
-
+<link rel="stylesheet" href="{% static 'css/estilologin.css' %}">
 <form class="formu" method="POST">
 		
 	<h1>Login Usuario</h1>
 	{% csrf_token %}
 	{{ form.as_p }}
 	<input type="submit" value="Ingresar" class="btn-enviar">
-	<a href="/olvido/"> ¿Olvidaste tú contraseña? </a>
+	<a href="olvido.html"> ¿Olvidaste tú contraseña? </a>
 	{% if mensaje != "" %}
 		<script languaje='javascript'>alert('{{mensaje}}')</script>	
 	{% endif %}
